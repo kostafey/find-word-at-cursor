@@ -31,6 +31,19 @@
 				"title": "Find previous word at cursor"
 			}
 		],
+		"configuration": [
+			{
+				"type": "object",
+				"title": "findWordAtCursor",
+				"properties": {
+					"findWordAtCursor.showMessageIfNotFound": {
+						"type": "boolean",
+						"default": true,
+						"description": "Show the message if no any occurrencies found"
+					}
+				}
+			}
+		],
 		"keybindings": [
 			{
 				"key": "f3",

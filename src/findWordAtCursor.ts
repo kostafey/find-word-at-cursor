@@ -1,4 +1,5 @@
 import { Disposable, Position, Range, Selection, TextDocument, TextEditorRevealType, ThemeColor, window } from 'vscode';
+import * as vscode from 'vscode';
 
 // We will decorate found matches with this decoration type, which is just the default theme
 // highlight behind the word.
@@ -58,7 +59,11 @@ function _seek(backward = false) {
     const foundPosition = searchBySlidingRange(document, needleRange, backward, isStrictSearch);
     const foundRange = document.getWordRangeAtPosition(foundPosition);
 
-    if (foundRange !== undefined && needleRange.isEqual(foundRange)) {
+    const findWordAtCursorConfig = vscode.workspace.getConfiguration('findWordAtCursor');
+
+    if (findWordAtCursorConfig.showMessageIfNotFound && 
+        foundRange !== undefined && 
+        needleRange.isEqual(foundRange)) {
         window.showInformationMessage('No more matches.');
         return;
     }

@@ -20,3 +20,5 @@ Make search a little bit easier.
     - Has selection → `wholeWords: false; caseSensitive: false`
 - Default key binding
     - <kbd>F3</kbd> / <kbd>Shift</kbd> + <kbd>F3</kbd> (find next/previous word at cursor)
+- Set `"findWordAtCursor.showMessageIfNotFound": false` to disable message 
+  dialog if no any occurrencies found
